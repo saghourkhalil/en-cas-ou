@@ -24698,3 +24698,53 @@ Completed 200 OK in 978ms (Views: 849.5ms | ActiveRecord: 94.7ms)
 Completed 200 OK in 1001ms (Views: 641.3ms | ActiveRecord: 303.5ms)
 
 
+Started GET "/places" for 127.0.0.1 at 2018-12-05 16:26:27 +0100
+  [1m[35m (15.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/khalil/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by PlacesController#index as HTML
+  Rendering places/index.html.erb within layouts/application
+  [1m[36mPlace Load (0.6ms)[0m  [1m[34mSELECT "places".* FROM "places"[0m
+  ↳ app/views/places/index.html.erb:16
+  Rendered places/index.html.erb within layouts/application (30.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:5
+  Rendered layouts/_navbar.html.erb (45.5ms)
+Completed 200 OK in 2014ms (Views: 1957.2ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/places/4" for 127.0.0.1 at 2018-12-05 16:26:36 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlace Load (1.0ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/places_controller.rb:67
+  Rendering places/show.html.erb within layouts/application
+  Rendered places/show.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:5
+  Rendered layouts/_navbar.html.erb (4.2ms)
+Completed 200 OK in 120ms (Views: 81.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/places/4" for 127.0.0.1 at 2018-12-05 16:26:36 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPlace Load (0.3ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/places_controller.rb:67
+  Rendering places/show.html.erb within layouts/application
+  Rendered places/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:5
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 94ms (Views: 91.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2018-12-05 16:26:41 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (11.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:5
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 105ms (Views: 99.0ms | ActiveRecord: 0.3ms)
+
+
